@@ -4,7 +4,7 @@ function dbparams = get_db_login_params(dbname)
 [~, name] = system('hostname');
 if strncmp(name, 'mini-meg', 8)
     dbparams.serveraddr = 'localhost';
-elseif contains(name, 'cle-fes')
+elseif contains(lower(name), 'cle-')
     dbparams.serveraddr = '10.83.111.4';
 else
 	% not on a computer on the local network
