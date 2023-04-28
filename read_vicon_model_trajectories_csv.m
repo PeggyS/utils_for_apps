@@ -20,7 +20,8 @@ fid = fopen(filename, 'r', 'n', 'UTF-8');
 data.filename = filename;
 % read first line, it should be 'Model Outputs' or 'Trajectories'
 txt = fgetl(fid);
-assert(strcmp(txt, 'Model Outputs') || strcmp(txt, 'Trajectories'), 'Model Outpus or Trajectories is not the first line of the devices.csv file')
+assert(strcmp(txt, 'Model Outputs') || strcmp(txt, 'Trajectories'), ...
+	'Model Outputs or Trajectories is not the first line of the devices.csv file')
 
 % read the next line, it should be the vicon sampling freq
 txt = fgetl(fid);
@@ -75,6 +76,7 @@ col_names = cellfun(@(x,y)combine_names(x,y), col_names, col3_names, 'UniformOut
 assert(length(col_names) == width(data.tbl), 'error parsing the col_names in %s', filename);
 % set col names
 data.tbl.Properties.VariableNames = col_names;
+
 return
 
 
