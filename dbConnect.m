@@ -312,7 +312,9 @@ classdef dbConnect
                         tempstr = tempstr(1:end-4); % remove last or
                         wherestr = [wherestr '(' tempstr ') , '];
 
-                    else % only one numeric value
+					elseif isnan(wherevals{j}) % only one numeric value and it's NaN - edit by PS 2024-01-17
+						wherestr = [wherestr col '=NULL , '];
+					else % only one numeric value
                         val = sprintf('%f',wherevals{j});
                         wherestr = [wherestr col '=' val ' , '];
 
