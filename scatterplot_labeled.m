@@ -58,7 +58,7 @@ if ~isempty(labeldata)
 	h_fig = get(h_ax, 'Parent');
 	% 	h = datacursormode(h_fig);
 	h = datacursormode;
-	set(h,'UpdateFcn',@myupdatefcn,'SnapToDataVertex','on', 'DisplayStyle', 'window');
+	set(h,'UpdateFcn',@myupdatefcn,'SnapToDataVertex','on'); %, 'DisplayStyle', 'window');
 	datacursormode on
 	% mouse click on plot
 end
