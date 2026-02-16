@@ -2,7 +2,7 @@ function dbparams = get_db_login_params(dbname)
 % change these values as needed for where the database is running
 
 [~, name] = system('hostname');
-if strncmp(name, 'mini-meg', 8)
+if strncmp(name, 'megameg', 7)
     dbparams.serveraddr = 'localhost';
 elseif contains(lower(name), 'cle-')
     dbparams.serveraddr = '10.83.111.4';
@@ -16,6 +16,10 @@ switch dbname
 		dbparams.dbname = 'tdcs_vgait';
 		dbparams.user = 'tdcs_vgait';
 		dbparams.password = 'tdcs_vgait';
+	case 'myopro_merit'
+		dbparams.dbname = 'myopro_merit';
+		dbparams.user = 'myomo';
+		dbparams.password = 'user_myomo';
 	case 'myomo'
 		dbparams.dbname = 'myomo';
 		dbparams.user = 'myomo';
