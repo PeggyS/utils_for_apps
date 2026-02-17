@@ -6,6 +6,8 @@ if strncmp(name, 'megameg', 7)
     dbparams.serveraddr = 'localhost';
 elseif contains(lower(name), 'cle-')
     dbparams.serveraddr = '10.83.111.4';
+elseif contains(lower(name), 'mmmmeggie')
+	dbparams.serveraddr = '192.168.9.10';
 else
 	% not on a computer on the local network
 	dbparams = [];
